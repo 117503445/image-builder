@@ -52,7 +52,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            117503445/mineru
+            117503445/mineru-full
           tags: |
             type=schedule
             type=ref,event=branch
@@ -67,7 +67,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./mineru
+          context: ./mineru-full
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
