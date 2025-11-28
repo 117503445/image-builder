@@ -20,5 +20,7 @@ COPY download.py ./
 # 在构建阶段下载模型
 RUN python3 download.py
 
+RUN apt-get update && apt-get install -y git curl wget
+
 # Set default command
 ENTRYPOINT ["/code/run.sh"]
