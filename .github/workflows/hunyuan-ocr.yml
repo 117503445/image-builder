@@ -1,4 +1,4 @@
-name: docker
+name: huanyuan-ocr
 
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            117503445/huanyuanocr
+            117503445/huanyuan-ocr
           tags: |
             type=schedule
             type=ref,event=branch
@@ -67,7 +67,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./huanyuanocr
+          context: ./huanyuan-ocr
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
