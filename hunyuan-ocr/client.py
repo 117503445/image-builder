@@ -28,8 +28,8 @@ messages = [
 ]
 
 response = client.chat.completions.create(
-    model="tencent/HunyuanOCR",
-    # model="Tencent-Hunyuan/HunyuanOCR",
+    # model="tencent/HunyuanOCR",
+    model="/models/HunyuanOCR",
     messages=messages,
     temperature=0.0,
     extra_body={
