@@ -78,7 +78,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./trinity-uv
+          context: ./trinity-uv/Trinity-RFT
+          file: "./scripts/docker/Dockerfile.uv"
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
