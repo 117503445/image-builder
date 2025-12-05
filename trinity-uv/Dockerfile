@@ -29,8 +29,8 @@ RUN chmod 1777 /tmp && apt update && apt install -y \
 ENV VIRTUAL_ENV=/opt/venv
 
 # copy the Trinity-RFT dir into the workspace
-# COPY . .
-RUN cd /tmp && git clone https://github.com/modelscope/Trinity-RFT && mv /tmp/Trinity-RFT .
+COPY . .
+# RUN git clone https://github.com/modelscope/Trinity-RFT /tmp/Trinity-RFT && mv /tmp/Trinity-RFT .
 
 # Install uv
 RUN pip install uv && uv venv /opt/venv --python=python3.12

@@ -24,8 +24,8 @@ RUN chmod 1777 /tmp && apt update && apt install -y \
 #    && pip config set install.trusted-host mirrors.cloud.aliyuncs.com
 
 # copy the Trinity-RFT dir into the workspace
-# COPY . .
-RUN cd /tmp && git clone https://github.com/modelscope/Trinity-RFT && mv /tmp/Trinity-RFT .
+COPY . .
+# RUN git clone https://github.com/modelscope/Trinity-RFT /tmp/Trinity-RFT && mv /tmp/Trinity-RFT .
 
 # Install Trinity-RFT with Megatron
 RUN pip install --upgrade pip \

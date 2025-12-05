@@ -72,6 +72,8 @@ jobs:
             type=sha
             type=raw,value=latest
 
+      - run: cd trinity-uv && git clone https://github.com/modelscope/Trinity-RFT
+
       # https://github.com/docker/build-push-action
       - name: Build and push
         uses: docker/build-push-action@v6
